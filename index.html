@@ -273,7 +273,7 @@
     /* ── MOBILE ── */
     @media(max-width:768px){
       nav{padding:1.1rem 1.5rem;}
-      .nav-right {gap: 0.6rem;}
+      .nav-right {gap: 0.5rem !important; /* Tightens the space between icon and hamburger */}
       .nav-hamburger{display:flex;}
       .nav-links{position:fixed;top:0;right:-100%;width:70%;max-width:280px;height:100vh;flex-direction:column;gap:0;background:var(--nav-bg);backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:5rem 2rem 2rem;transition:right .35s ease,background .4s;z-index:550;}
       .nav-links.open{right:0;}
@@ -282,8 +282,9 @@
       .nav-links a:hover{color:var(--teal);}
       .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:540;}
       .nav-overlay.open{display:block;}
-      .theme-toggle .toggle-label{display:none;}
+      .theme-toggle .toggle-label {display: none; /* Hides 'Dark/Light' text on mobile, leaving just the icon */}
       #hero{padding:6rem 1.5rem 3rem;min-height:100svh;align-items:flex-start;}
+      .theme-toggle {padding: 0.5rem; /* Makes it a nice circular/square button for mobile */border-radius: 50%;}
       .hero-content{max-width:100%;}
       .hero-badge{font-size:.6rem;padding:.35rem .9rem;}
       .hero-name{font-size:clamp(2.8rem,12vw,4.5rem);}
@@ -344,9 +345,6 @@
  
 <nav>
   <a href="#hero" class="nav-logo">SK.</a>
-  <!--<button class="nav-hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>-->
   <ul class="nav-links" id="navLinks">
     <li><a href="#about" class="nav-link-item">About</a></li>
     <li><a href="#skills" class="nav-link-item">Skills</a></li>
@@ -354,7 +352,8 @@
     <li><a href="#projects" class="nav-link-item">Projects</a></li>
     <li><a href="#contact" class="nav-link-item">Contact</a></li>
   </ul>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <div class="nav-right" style="display: flex; align-items: center; gap: 1rem;">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
       <span class="toggle-icon" id="toggleIcon">🌙</span>
       <span class="toggle-label" id="toggleLabel">Dark</span>
     </button>
