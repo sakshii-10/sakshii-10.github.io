@@ -623,7 +623,17 @@
     localStorage.setItem('sk-theme', next);
     updateToggleUI(next);
   });
- 
+  
+ function toggleText(id, btn) {
+    const element = document.getElementById(id);
+    if (element.style.display === "none") {
+        element.style.display = "inline";
+        btn.innerText = "- Show Less";
+    } else {
+        element.style.display = "none";
+        btn.innerText = id.includes('ycx') ? "+ Show More" : "Read Full Story";
+    }
+}
   // ── Custom cursor (desktop only) ──
   const cursor = document.getElementById('cursor');
   const ring   = document.getElementById('cursorRing');
