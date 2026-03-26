@@ -61,8 +61,8 @@
  
     /* ── NAV ── */
     nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 4rem;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--shadow);transition:background .4s,box-shadow .4s;}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
     .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;background:linear-gradient(135deg,var(--teal),var(--lavender));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;letter-spacing:.05em;}
-    .nav-right{display:flex;align-items:center;gap:2rem;}
     .nav-links{display:flex;gap:2.5rem;list-style:none;}
     .nav-links a{color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;transition:color .3s;position:relative;}
     .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:linear-gradient(90deg,var(--teal),var(--lavender));transition:width .3s;}
@@ -233,6 +233,7 @@
     /* ── MOBILE ── */
     @media(max-width:768px){
       nav{padding:1.1rem 1.5rem;}
+      .nav-right {gap: 0.6rem;}
       .nav-hamburger{display:flex;}
       .nav-links{position:fixed;top:0;right:-100%;width:70%;max-width:280px;height:100vh;flex-direction:column;gap:0;background:var(--nav-bg);backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:5rem 2rem 2rem;transition:right .35s ease,background .4s;z-index:550;}
       .nav-links.open{right:0;}
@@ -303,9 +304,9 @@
  
 <nav>
   <a href="#hero" class="nav-logo">SK.</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+  <!--<button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
-  </button>
+  </button>-->
   <ul class="nav-links" id="navLinks">
     <li><a href="#about" class="nav-link-item">About</a></li>
     <li><a href="#skills" class="nav-link-item">Skills</a></li>
