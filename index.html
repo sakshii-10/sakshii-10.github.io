@@ -229,7 +229,47 @@
     .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
     .nav-hamburger.open span:nth-child(2){opacity:0;}
     .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
- 
+
+    /* Hero Desktop Layout Fix */
+    @media (min-width: 1025px) {
+      #hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 2rem;
+      }
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1000px;
+      }
+      .dashboard-peek {
+        width: 115%; /* Bleeds off screen for depth */
+        transform: rotateY(-20deg) rotateX(5deg);
+        filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.1));
+        transition: transform 0.5s ease;
+      }
+      .dashboard-peek:hover { transform: rotateY(-5deg); }
+    }
+
+    /* YCX Bullet Fix */
+    .more-item {
+        display: block;
+        font-size: .78rem;
+        color: var(--muted);
+        line-height: 1.7;
+        padding-left: 1rem;
+        position: relative;
+        margin-top: 0.8rem;
+    }
+    .more-item::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: var(--teal);
+        font-size: .7rem;
+    }
+    
     /* ── MOBILE ── */
     @media(max-width:768px){
       nav{padding:1.1rem 1.5rem;}
@@ -460,21 +500,14 @@
         <div class="tl-company">YCX · Remote / London, UK</div>
         <ul class="tl-points">
           <li>Built automated AI-agent pipelines to extract and structure intelligence data — cutting manual work by ~40%.</li>
-          <li>Designed selective enrichment workflows reducing processing time from hours to minutes.
-        <span id="more-ycx" style="display: none;">
-      <br><br>
-      <span style="display: block; margin-bottom: 0.6rem; position: relative; padding-left: 1rem;">
-        <span style="position: absolute; left: 0; color: var(--teal);">▹</span>
-        Automated dataset refreshes via Google Sheets API, improving real-time data accuracy.
-      </span>
-      <span style="display: block; position: relative; padding-left: 1rem;">
-        <span style="position: absolute; left: 0; color: var(--teal);">▹</span>
-        Implemented multi-agent orchestration using n8n and Groq API for scalable enrichment.
-      </span>
-    </span>
-        <span onclick="toggleInline('ycx')" id="btn-ycx" style="color: var(--teal); cursor: pointer; font-weight: 600; margin-left: 5px;"> <em>more...</em> </span>
-    </li>
-  </ul>
+          <li>Designed selective enrichment workflows reducing processing time from hours to minutes...
+            <span id="more-ycx" style="display: none;">
+              <span class="more-item">Automated dataset refreshes via Google Sheets API, improving real-time data accuracy.</span>
+              <span class="more-item">Implemented multi-agent orchestration using n8n and Groq API for scalable enrichment.</span>
+            </span>
+            <span onclick="toggleInline('ycx')" id="btn-ycx" style="color: var(--teal); cursor: pointer; font-weight: 600; margin-left: 5px;"><em>more...</em></span>
+          </li>
+        </ul>
     </div>
     <div class="timeline-item reveal">
       <div class="tl-date">Jul 2021 – Apr 2023</div>
