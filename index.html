@@ -203,7 +203,10 @@
  
     /* ── CONTACT ── */
     #contact{background:var(--bg2);border-top:1px solid var(--border);transition:background .4s;}
-    .contact-inner{max-width:680px;}
+    .contact-inner{max-width:100%;}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+    .contact-visual .dashboard-peek{width:100%;max-width:460px;}
+    @media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:2.5rem;}.contact-visual{display:none;}}
     .contact-desc{color:var(--muted);font-size:.85rem;line-height:1.9;margin-bottom:2.5rem;}
     .contact-links{display:flex;flex-direction:column;gap:.9rem;margin-bottom:2.5rem;}
     .c-link{display:flex;align-items:center;gap:1.5rem;border:1px solid var(--border);padding:1.1rem 1.4rem;text-decoration:none;color:var(--text);background:var(--card);transition:border-color .3s,transform .25s,box-shadow .3s,background .4s;box-shadow:var(--shadow);}
@@ -397,11 +400,102 @@
   <div class="hero-visual">
     <div class="dashboard-peek">
       <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="300" rx="20" fill="var(--card)" stroke="var(--border)"/>
-        <path d="M40 220 Q 120 140, 200 180 T 360 100" stroke="var(--teal)" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="360" cy="100" r="6" fill="var(--lavender)"/>
-        <rect x="30" y="30" width="100" height="15" rx="5" fill="var(--bg2)"/>
-        <rect x="30" y="55" width="60" height="15" rx="5" fill="var(--bg2)"/>
+        <defs>
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0d9488" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#0d9488" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="barGrad1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7c3aed"/>
+            <stop offset="100%" stop-color="#0d9488"/>
+          </linearGradient>
+          <linearGradient id="barGrad2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0d9488"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+        <!-- Card background -->
+        <rect width="400" height="300" rx="16" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+        <!-- Top bar -->
+        <rect x="0" y="0" width="400" height="40" rx="16" fill="var(--bg2)"/>
+        <rect x="0" y="24" width="400" height="16" fill="var(--bg2)"/>
+        <circle cx="20" cy="20" r="5" fill="#ff5f57"/>
+        <circle cx="36" cy="20" r="5" fill="#febc2e"/>
+        <circle cx="52" cy="20" r="5" fill="#28c840"/>
+        <rect x="70" y="14" width="80" height="12" rx="3" fill="var(--border)"/>
+        <!-- Live badge -->
+        <rect x="340" y="12" width="46" height="16" rx="8" fill="rgba(13,148,136,0.15)" stroke="rgba(13,148,136,0.4)" stroke-width="1"/>
+        <circle cx="351" cy="20" r="3" fill="#0d9488">
+          <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <text x="357" y="24" font-size="7" fill="#0d9488" font-family="monospace">LIVE</text>
+
+        <!-- KPI cards row -->
+        <rect x="16" y="52" width="108" height="52" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="1"/>
+        <text x="26" y="68" font-size="7" fill="#5b5478" font-family="monospace" letter-spacing="1">REVENUE</text>
+        <text x="26" y="86" font-size="14" fill="#0d9488" font-family="monospace" font-weight="bold">£2.4M</text>
+        <text x="26" y="97" font-size="7" fill="#0d9488" font-family="monospace">▲ 12.3%</text>
+
+        <rect x="146" y="52" width="108" height="52" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="1"/>
+        <text x="156" y="68" font-size="7" fill="#5b5478" font-family="monospace" letter-spacing="1">RECORDS</text>
+        <text x="156" y="86" font-size="14" fill="#7c3aed" font-family="monospace" font-weight="bold">12.1M</text>
+        <text x="156" y="97" font-size="7" fill="#7c3aed" font-family="monospace">▲ 8.7%</text>
+
+        <rect x="276" y="52" width="108" height="52" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="1"/>
+        <text x="286" y="68" font-size="7" fill="#5b5478" font-family="monospace" letter-spacing="1">ACCURACY</text>
+        <text x="286" y="86" font-size="14" fill="#0d9488" font-family="monospace" font-weight="bold">98.6%</text>
+        <text x="286" y="97" font-size="7" fill="#0d9488" font-family="monospace">▲ 2.1%</text>
+
+        <!-- Line chart area -->
+        <rect x="16" y="116" width="240" height="100" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="1"/>
+        <text x="26" y="131" font-size="7" fill="#5b5478" font-family="monospace" letter-spacing="1">TREND ANALYSIS</text>
+        <polyline points="30,195 65,175 100,182 135,155 170,162 205,138 240,148" fill="none" stroke="#0d9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polygon points="30,195 65,175 100,182 135,155 170,162 205,138 240,148 240,200 30,200" fill="url(#lineGrad)"/>
+        <!-- animated dot on line -->
+        <circle cx="240" cy="148" r="4" fill="#0d9488">
+          <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <!-- grid lines -->
+        <line x1="30" y1="175" x2="240" y2="175" stroke="var(--border)" stroke-width="0.5"/>
+        <line x1="30" y1="158" x2="240" y2="158" stroke="var(--border)" stroke-width="0.5"/>
+
+        <!-- Bar chart -->
+        <rect x="268" y="116" width="116" height="100" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="1"/>
+        <text x="278" y="131" font-size="7" fill="#5b5478" font-family="monospace" letter-spacing="1">BY REGION</text>
+        <!-- bars -->
+        <rect x="280" y="178" width="14" height="30" rx="2" fill="url(#barGrad1)">
+          <animate attributeName="height" values="10;30;10" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="198;178;198" dur="3s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="300" y="165" width="14" height="43" rx="2" fill="url(#barGrad2)">
+          <animate attributeName="height" values="20;43;20" dur="3.4s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="188;165;188" dur="3.4s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="320" y="172" width="14" height="36" rx="2" fill="url(#barGrad1)">
+          <animate attributeName="height" values="15;36;15" dur="2.8s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="193;172;193" dur="2.8s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="340" y="160" width="14" height="48" rx="2" fill="url(#barGrad2)">
+          <animate attributeName="height" values="25;48;25" dur="3.2s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="183;160;183" dur="3.2s" repeatCount="indefinite"/>
+        </rect>
+        <line x1="278" y1="208" x2="360" y2="208" stroke="var(--border)" stroke-width="1"/>
+
+        <!-- Bottom status bar -->
+        <rect x="16" y="228" width="368" height="56" rx="8" fill="var(--bg2)" stroke="var(--border)" stroke-width="1"/>
+        <text x="26" y="244" font-size="7" fill="#5b5478" font-family="monospace" letter-spacing="1">PIPELINE STATUS</text>
+        <!-- progress bars -->
+        <rect x="26" y="250" width="160" height="6" rx="3" fill="var(--border)"/>
+        <rect x="26" y="250" width="148" height="6" rx="3" fill="#0d9488"/>
+        <text x="192" y="257" font-size="7" fill="#0d9488" font-family="monospace">92%</text>
+
+        <rect x="220" y="250" width="150" height="6" rx="3" fill="var(--border)"/>
+        <rect x="220" y="250" width="120" height="6" rx="3" fill="#7c3aed"/>
+        <text x="374" y="257" font-size="7" fill="#7c3aed" font-family="monospace">80%</text>
+
+        <text x="26" y="274" font-size="6.5" fill="#5b5478" font-family="monospace">ETL Pipeline · Active</text>
+        <text x="220" y="274" font-size="6.5" fill="#5b5478" font-family="monospace">ML Model · Training</text>
       </svg>
     </div>
   </div>
@@ -632,27 +726,42 @@
  
 <section id="contact">
   <div class="contact-inner">
-    <div class="sec-label reveal">Contact</div>
-    <h2 class="sec-title reveal">Let's build something.</h2>
-    <p class="contact-desc reveal">  Based in the UK and open to full-time Data Analyst opportunities. I’m energized by diverse teams, fresh perspectives, and challenges that don’t have obvious solutions. If you’re looking for someone who turns data into actionable insights and drives real decisions, I’d love to connect!</p>
-    <div class="contact-links reveal">
-      <a href="mailto:srkothari10@gmail.com" class="c-link">
-        <span class="c-icon">✉</span>
-        <div><span class="c-label">Email</span><span class="c-val">srkothari10@gmail.com</span></span></div>
-        <span class="c-arrow">→</span>
-      </a>
-      <a href="https://www.linkedin.com/in/skothari10" target="_blank" class="c-link">
-        <span class="c-icon">in</span>
-        <div><span class="c-label">LinkedIn</span><span class="c-val">linkedin.com/in/skothari10</span></div>
-        <span class="c-arrow">→</span>
-      </a>
-      <a href="https://github.com" target="_blank" class="c-link">
-        <span class="c-icon">⌥</span>
-        <div><span class="c-label">GitHub</span><span class="c-val">github.com/sakshii-10</span></div>
-        <span class="c-arrow">→</span>
-      </a>
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="sec-label reveal">Contact</div>
+        <h2 class="sec-title reveal">Let's build something.</h2>
+        <p class="contact-desc reveal">Based in the UK and open to full-time Data Analyst opportunities. I'm energized by diverse teams, fresh perspectives, and challenges that don't have obvious solutions. If you're looking for someone who turns data into actionable insights and drives real decisions, I'd love to connect!</p>
+        <div class="contact-links reveal">
+          <a href="/cdn-cgi/l/email-protection#99eaebf2f6edf1f8ebf0a8a9d9fef4f8f0f5b7faf6f4" class="c-link">
+            <span class="c-icon">&#x2709;</span>
+            <div><span class="c-label">Email</span><span class="c-val"><span class="__cf_email__" data-cfemail="fe8d8c95918a969f8c97cfcebe99939f9792d09d9193">[email&#160;protected]</span></span></div>
+            <span class="c-arrow">&#x2192;</span>
+          </a>
+          <a href="https://www.linkedin.com/in/skothari10" target="_blank" class="c-link">
+            <span class="c-icon">in</span>
+            <div><span class="c-label">LinkedIn</span><span class="c-val">linkedin.com/in/skothari10</span></div>
+            <span class="c-arrow">&#x2192;</span>
+          </a>
+          <a href="https://github.com" target="_blank" class="c-link">
+            <span class="c-icon">&#x2325;</span>
+            <div><span class="c-label">GitHub</span><span class="c-val">github.com/sakshii-10</span></div>
+            <span class="c-arrow">&#x2192;</span>
+          </a>
+        </div>
+        <a href="/cdn-cgi/l/email-protection#d0a3a2bbbfa4b8b1a2b9e1e090b7bdb1b9bcfeb3bfbd" class="btn-teal reveal">Say Hello &#x2192;</a>
+      </div>
+      <div class="contact-visual reveal">
+        <div class="dashboard-peek">
+          <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" rx="20" fill="var(--card)" stroke="var(--border)"/>
+            <path d="M40 220 Q 120 140, 200 180 T 360 100" stroke="var(--teal)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="360" cy="100" r="6" fill="var(--lavender)"/>
+            <rect x="30" y="30" width="100" height="15" rx="5" fill="var(--bg2)"/>
+            <rect x="30" y="55" width="60" height="15" rx="5" fill="var(--bg2)"/>
+          </svg>
+        </div>
+      </div>
     </div>
-    <a href="mailto:srkothari10@gmail.com" class="btn-teal reveal">Say Hello →</a>
   </div>
 </section>
  
@@ -661,7 +770,7 @@
   <!--<span>Deployed on GitHub Pages</span>-->
 </footer>
  
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
    // ── Always start at top on refresh ──
   if('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.scrollTo(0, 0);
@@ -739,7 +848,7 @@
   hamburger.addEventListener('click', ()=> navLinks.classList.contains('open') ? closeMenu() : openMenu());
   navOverlay.addEventListener('click', closeMenu);
   document.querySelectorAll('.nav-link-item').forEach(a=> a.addEventListener('click', closeMenu));
- 
+
   // ── Scroll reveal ──
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach((e,i)=>{ if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'), i*70); });
