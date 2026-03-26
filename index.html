@@ -358,15 +358,16 @@
     <div class="sec-label">About Me</div>
     <h2 class="sec-title">Data storyteller.<br/>Curiosity-driven.</h2>
     <p>Currently, I work as a <em>Finance & Tech Analyst Intern at Beko Europe</em>, where I bridge the gap between raw financial numbers and strategic tech implementation.</p>    
-    <p id="about-hook">My journey from a 9.7 CGPA in Computer Science to a Distinction in Big Data Science taught me one thing: data is useless unless it tells a story that moves the needle...</p>
-    <div id="more-about" style="display: none;">
-        <p>I've built AI pipelines that cut manual work by 40% and analysed over 12 million records to reshape procurement strategy. I thrive at the intersection of <em>technical depth and human communication</em>.</p>
-        <p>I aim to bring <em>clarity, structure, and impact</em> to every project I contribute to.</p>
-    </div>
-    <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1.2rem;">
-        <button onclick="toggleText('more-about', this)" class="btn-ghost" style="padding: 0.5rem 1rem; font-size: 0.7rem;">Read Full Story</button>
-        <a href="#contact" class="btn-teal">Let's Connect →</a>
-      </div>
+    <p>
+        My journey from a 9.7 CGPA in Computer Science to a Distinction in Big Data Science taught me one thing: data is useless unless it tells a story that moves the needle...
+        <span id="dots-about"></span>
+        <span id="more-about" style="display: none;">
+            I've built AI pipelines that cut manual work by 40% and analysed over 12 million records to reshape procurement strategy. I thrive at the intersection of <em>technical depth and human communication</em>. I aim to bring <em>clarity, structure, and impact</em> to every project I contribute to.
+        </span>
+        <span onclick="toggleInline('about')" id="btn-about" style="color: var(--teal); cursor: pointer; font-weight: 600; margin-left: 5px;">more...</span>
+    </p>
+    <a href="#contact" class="btn-teal" style="margin-top:1.5rem; display:inline-block;">Let's Connect →</a>
+  </div>
     </div> 
     <div class="about-right reveal">
        </div>
@@ -456,15 +457,16 @@
         <div class="tl-role">AI & Data Intern</div>
         <div class="tl-company">YCX · Remote / London, UK</div>
         <ul class="tl-points">
-          <li>Built automated AI-agent pipelines to extract, structure, and validate multi-source company intelligence data — cutting manual preparation by ~40%.</li>
-          <li>Designed selective enrichment workflows reducing processing time from hours to minutes for faster analytical reporting.</li>
-          <span id="more-ycx" style="display: none;">
-        <li>Automated dataset refreshes via Google Sheets API, improving real-time data accuracy.</li>
-        <li>Implemented multi-agent orchestration using n8n and Groq API for scalable enrichment.</li>
-    </span>
+          <li>Built automated AI-agent pipelines to extract and structure intelligence data — cutting manual work by ~40%.</li>
+          <li>Designed selective enrichment workflows reducing processing time from hours to minutes...
+        <span id="more-ycx" style="display: none;">
+            <br><br>
+            • Automated dataset refreshes via Google Sheets API, improving real-time data accuracy.<br>
+            • Implemented multi-agent orchestration using n8n and Groq API for scalable enrichment.
+        </span>
+        <span onclick="toggleInline('ycx')" id="btn-ycx" style="color: var(--teal); cursor: pointer; font-weight: 600; margin-left: 5px;">more...</span>
+    </li>
   </ul>
-    <button onclick="toggleText('more-ycx', this)" class="pill" style="margin-top:0.5rem; background:none; cursor:pointer;">+ Show More</button>
-      </div>
     </div>
     <div class="timeline-item reveal">
       <div class="tl-date">Jul 2021 – Apr 2023</div>
@@ -634,14 +636,16 @@
     updateToggleUI(next);
   });
   
- function toggleText(id, btn) {
-    const element = document.getElementById(id);
-    if (element.style.display === "none") {
-        element.style.display = "inline";
-        btn.innerText = "- Show Less";
+ function toggleInline(section) {
+    const moreText = document.getElementById("more-" + section);
+    const btnText = document.getElementById("btn-" + section);
+
+    if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btnText.innerHTML = "less...";
     } else {
-        element.style.display = "none";
-        btn.innerText = id.includes('ycx') ? "+ Show More" : "Read Full Story";
+        moreText.style.display = "none";
+        btnText.innerHTML = "more...";
     }
 }
   // ── Custom cursor (desktop only) ──
