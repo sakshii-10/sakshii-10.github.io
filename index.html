@@ -355,23 +355,26 @@
 <section id="about">
   <div class="about-grid">
     <div class="about-text reveal">
-    <div class="sec-label">About Me</div>
-    <h2 class="sec-title">Data storyteller.<br/>Curiosity-driven.</h2>
-    <p>Currently, I work as a <em>Finance & Tech Analyst Intern at Beko Europe</em>, where I bridge the gap between raw financial numbers and strategic tech implementation.</p>    
-    <p>
+      <div class="sec-label">About Me</div>
+      <h2 class="sec-title">Data storyteller.<br/>Curiosity-driven.</h2>
+      
+      <p>Currently, I work as a <em>Finance & Tech Analyst Intern at Beko Europe</em>, where I bridge the gap between raw financial numbers and strategic tech implementation.</p>    
+      
+      <p>
         My journey from a 9.7 CGPA in Computer Science to a Distinction in Big Data Science wasn't just academic — it was about building the kind of rigorous, curious mindset that makes data meaningful
-        <span id="dots-about"></span>
         <span id="more-about" style="display: none;">
-             beyond the spreadsheet. <p>I've built AI pipelines that cut manual work by 40%, analysed over 12 million records to reshape procurement strategy, and presented findings to stakeholders who needed clarity, not complexity.</p>
-      <p>I thrive at the intersection of <em>technical depth and human communication</em>— whether it’s analysing trends, building automated data workflows, developing dashboards, or communicating insights to stakeholders. I aim to bring <em>clarity, structure, and impact</em> to every project I contribute to.</p>
-        <span onclick="toggleInline('about')" id="btn-about" style="color: var(--teal); cursor: pointer; font-weight: 600; margin-left: 5px;"> more...</span>
-    </p>
-    <a href="#contact" class="btn-teal" style="margin-top:1.5rem; display:inline-block;">Let's Connect →</a>
-  </div>
+           beyond the spreadsheet. I've built AI pipelines that cut manual work by 40%, analysed over 12 million records to reshape procurement strategy, and presented findings to stakeholders who needed clarity, not complexity.
+           <br><br>
+           I thrive at the intersection of <em>technical depth and human communication</em>— whether it’s analysing trends, building automated data workflows, or communicating insights. I aim to bring <em>clarity, structure, and impact</em> to every project.
+        </span>
+        <span onclick="toggleInline('about')" id="btn-about" style="color: var(--teal); cursor: pointer; font-weight: 600; margin-left: 5px;">more...</span>
+      </p>
+
+      <div style="margin-top: 2rem;">
+        <a href="#contact" class="btn-teal">Let's Connect →</a>
+      </div>
     </div> 
-    <div class="about-right reveal">
-       </div>
-    </div>
+
     <div class="about-right reveal">
       <div class="stat-card">
         <div class="stat-num">40%</div>
@@ -641,18 +644,18 @@
     updateToggleUI(next);
   });
   
- function toggleInline(section) {
-    const moreText = document.getElementById("more-" + section);
-    const btnText = document.getElementById("btn-" + section);
-
-    if (moreText.style.display === "none") {
-        moreText.style.display = "inline";
-        btnText.innerHTML = "less...";
-    } else {
-        moreText.style.display = "none";
-        btnText.innerHTML = "more...";
-    }
-}
+  function toggleInline(section) {
+      const moreText = document.getElementById("more-" + section);
+      const btnText = document.getElementById("btn-" + section);
+  
+      if (moreText.style.display === "none") {
+          moreText.style.display = "inline";
+          btnText.innerHTML = "less...";
+      } else {
+          moreText.style.display = "none";
+          btnText.innerHTML = "more...";
+      }
+  }
   // ── Custom cursor (desktop only) ──
   const cursor = document.getElementById('cursor');
   const ring   = document.getElementById('cursorRing');
