@@ -83,6 +83,36 @@
     .theme-toggle:hover{border-color:var(--teal);color:var(--teal);}
     .theme-toggle .toggle-icon{font-size:.9rem;transition:transform .4s;}
     .theme-toggle:hover .toggle-icon{transform:rotate(20deg);}
+
+    /* ── CV DOWNLOAD BUTTON (NEW - LINE 106-120) ── */
+    .btn-cv-download {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      background: linear-gradient(135deg, var(--teal), var(--lavender));
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s, filter 0.3s;
+      white-space: nowrap;
+    }
+    .btn-cv-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
+      filter: brightness(1.1);
+    }
+    .btn-cv-download::before {
+      content: '⬇';
+      font-size: 0.8rem;
+    }
  
     /* ── HERO ── */
     #hero{min-height:100vh;display:flex;align-items:center;padding:9rem 4rem 4rem;position:relative;overflow:hidden;}
@@ -109,7 +139,9 @@
     .hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem;opacity:0;animation:fadeUp .8s .7s forwards;}
     .chip{font-size:.65rem;padding:.3rem .8rem;border:1px solid var(--border);color:var(--muted);letter-spacing:.08em;border-radius:2rem;background:rgba(124,58,237,0.04);transition:background .4s,border-color .4s;}
     [data-theme="dark"] .chip{background:rgba(167,139,250,0.05);}
-    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .85s forwards;}
+    
+    /* ── CTA BUTTONS (UPDATED - LINE 180-190) ── */
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .85s forwards;align-items:center;}
     .btn-teal{display:inline-block;padding:.85rem 2rem;background:var(--teal);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
     [data-theme="light"] .btn-teal{color:#fff;}
     [data-theme="dark"] .btn-teal{color:#0d0b14;}
@@ -117,6 +149,7 @@
     [data-theme="dark"] .btn-teal:hover{box-shadow:0 10px 40px rgba(45,212,191,0.3);}
     .btn-ghost{display:inline-block;padding:.85rem 2rem;border:1px solid var(--border);color:var(--lavender);font-family:'Syne',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:border-color .3s,box-shadow .3s;}
     .btn-ghost:hover{border-color:var(--lavender);box-shadow:var(--glow-l);}
+    
     .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:fadeUp 1s 1.2s forwards;}
     .scroll-bar{width:1px;height:50px;background:linear-gradient(to bottom,var(--lavender),transparent);animation:drop 2.5s ease-in-out infinite;}
     @keyframes drop{0%{transform:scaleY(0);transform-origin:top;opacity:1}49%{transform:scaleY(1);transform-origin:top;opacity:1}50%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom;opacity:0}}
@@ -168,7 +201,8 @@
     .timeline{display:flex;flex-direction:column;}
     .timeline-item {
       display: grid;
-      grid-template-columns: 180px 1fr; /* Reduced date width */gap: 2rem; /* Reduced gap to give text more room */
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
       position: relative;
       padding-bottom: 3rem;
     }
@@ -235,7 +269,7 @@
     .nav-hamburger.open span:nth-child(2){opacity:0;}
     .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-    /* Hero Desktop Layout Fix */
+    /* ── HERO DESKTOP LAYOUT (UPDATED - LINE 290-310) ── */
     @media (min-width: 1025px) {
       #hero {
         display: grid;
@@ -247,17 +281,22 @@
         justify-content: center;
         align-items: center;
         perspective: 1000px;
+        position: relative;
       }
       .dashboard-peek {
-        width: 115%; 
-        transform: rotateY(-20deg) rotateX(5deg);
-        filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.1));
-        transition: transform 0.5s ease;
+        width: 100%;
+        max-width: 420px;
+        transform: rotateY(-15deg) rotateX(8deg);
+        filter: drop-shadow(-25px 25px 50px rgba(0,0,0,0.15));
+        transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
       }
-      .dashboard-peek:hover { transform: rotateY(-5deg); }
+      .dashboard-peek:hover {
+        transform: rotateY(-5deg) rotateX(2deg);
+        filter: drop-shadow(-15px 15px 40px rgba(13,148,136,0.25));
+      }
     }
 
-    /* YCX Bullet Fix */
+    /* ── YCX BULLET FIX ── */
     .more-item {
         display: block;
         font-size: .78rem;
@@ -278,7 +317,7 @@
     /* ── MOBILE ── */
     @media(max-width:768px){
       nav{padding:1.1rem 1.5rem;}
-      .nav-right {gap: 0.5rem !important; /* Tightens the space between icon and hamburger */}
+      .nav-right { gap: 0.5rem !important; }
       .nav-hamburger{display:flex;}
       .nav-links{position:fixed;top:0;right:-100%;width:70%;max-width:280px;height:100vh;flex-direction:column;gap:0;background:var(--nav-bg);backdrop-filter:blur(20px);border-left:1px solid var(--border);padding:5rem 2rem 2rem;transition:right .35s ease,background .4s;z-index:550;}
       .nav-links.open{right:0;}
@@ -287,9 +326,10 @@
       .nav-links a:hover{color:var(--teal);}
       .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:540;}
       .nav-overlay.open{display:block;}
-      .theme-toggle .toggle-label {display: none; /* Hides 'Dark/Light' text on mobile, leaving just the icon */}
-      #hero{padding:6rem 1.5rem 3rem;min-height:100svh;align-items:flex-start;}
-      .theme-toggle {padding: 0.5rem; /* Makes it a nice circular/square button for mobile */border-radius: 50%;}
+      .theme-toggle .toggle-label { display: none; }
+      #hero{padding:6rem 1.5rem 3rem;min-height:100svh;align-items:flex-start;grid-template-columns: 1fr;}
+      .theme-toggle {padding: 0.5rem; border-radius: 50%;}
+      .hero-visual { display: none; }
       .hero-content{max-width:100%;}
       .hero-badge{font-size:.6rem;padding:.35rem .9rem;}
       .hero-name{font-size:clamp(2.8rem,12vw,4.5rem);}
@@ -297,8 +337,10 @@
       .hero-desc{font-size:.85rem;max-width:100%;}
       .hero-chips{gap:.4rem;}
       .chip{font-size:.6rem;padding:.25rem .65rem;}
-      .hero-cta{flex-direction:column;gap:.75rem;}
-      .btn-teal,.btn-ghost{text-align:center;padding:.85rem 1.5rem;font-size:.78rem;}
+      /* ── UPDATED CTA MOBILE (LINE 403) ── */
+      .hero-cta{flex-direction:column;gap:.75rem;width:100%;}
+      .btn-teal,.btn-ghost{text-align:center;padding:.85rem 1.5rem;font-size:.78rem;width:100%;}
+      .btn-cv-download { width: 100%; justify-content: center; }
       .hero-scroll{display:none;}
       section{padding:4rem 1.5rem;}
       .sec-title{margin-bottom:2rem;}
@@ -340,6 +382,14 @@
       .timeline-item::before{left:160px;}
       .tl-dot{left:160px;}
       footer{padding:1.5rem 2.5rem;}
+      /* ── TABLET DASHBOARD (LINE 465-475) ── */
+      .dashboard-peek {
+        max-width: 380px;
+        transform: rotateY(-12deg) rotateX(6deg);
+      }
+      .dashboard-peek:hover {
+        transform: rotateY(-3deg) rotateX(1deg);
+      }
     }
   </style>
 </head>
@@ -358,6 +408,8 @@
     <li><a href="#contact" class="nav-link-item">Contact</a></li>
   </ul>
   <div class="nav-right" style="display: flex; align-items: center; gap: 1rem;">
+    <!-- ── CV DOWNLOAD BUTTON IN NAV (LINE 490-495) ── -->
+    <a href="#" class="btn-cv-download" id="cvDownloadNav" title="Download CV">CV</a>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
       <span class="toggle-icon" id="toggleIcon">🌙</span>
       <span class="toggle-label" id="toggleLabel">Dark</span>
@@ -369,6 +421,7 @@
   <div class="nav-overlay" id="navOverlay"></div>
 </nav>
  
+<!-- ── HERO SECTION WITH NEW DASHBOARD VISUAL (LINE 505-600) ── -->
 <section id="hero">
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
@@ -377,7 +430,6 @@
     <div class="hero-badge"><div class="badge-dot"></div>Open to full-time opportunities · London, UK</div>
     <h1 class="hero-name">
       <span class="first">Sakshi Kothari</span>
-      <!--<span class="last">Kothari</span>-->
     </h1>
     <div class="hero-role">Finance & Tech Analyst Intern · Beko Europe</div>
     <p class="hero-desc">
@@ -388,20 +440,114 @@
       <span class="chip">Advanced Excel</span><span class="chip">Machine Learning</span><span class="chip">DAX</span>
       <span class="chip">PySpark</span><span class="chip">Tableau</span>
     </div>
+    <!-- ── UPDATED CTA SECTION WITH CV BUTTON (LINE 533-537) ── -->
     <div class="hero-cta">
       <a href="#projects" class="btn-teal">View My Work</a>
       <a href="#contact" class="btn-ghost">Get In Touch</a>
+      <a href="#" class="btn-cv-download" id="cvDownloadHero" title="Download CV">CV</a>
     </div>
   </div>
 
+  <!-- ── PROFESSIONAL DASHBOARD VISUAL (LINE 542-620) ── -->
   <div class="hero-visual">
     <div class="dashboard-peek">
-      <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="300" rx="20" fill="var(--card)" stroke="var(--border)"/>
-        <path d="M40 220 Q 120 140, 200 180 T 360 100" stroke="var(--teal)" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="360" cy="100" r="6" fill="var(--lavender)"/>
-        <rect x="30" y="30" width="100" height="15" rx="5" fill="var(--bg2)"/>
-        <rect x="30" y="55" width="60" height="15" rx="5" fill="var(--bg2)"/>
+      <svg viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Dashboard Container -->
+        <defs>
+          <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="var(--teal)"/>
+            <stop offset="100%" stop-color="var(--lavender)"/>
+          </linearGradient>
+          <linearGradient id="chartGrad1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.05"/>
+          </linearGradient>
+          <linearGradient id="chartGrad2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.05"/>
+          </linearGradient>
+          <filter id="shadow">
+            <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.15"/>
+          </filter>
+        </defs>
+
+        <!-- Main Dashboard Card -->
+        <rect width="420" height="520" rx="16" fill="var(--card)" stroke="var(--border)" stroke-width="1.5" filter="url(#shadow)"/>
+
+        <!-- Header Section -->
+        <rect width="420" height="70" rx="16" fill="var(--bg2)"/>
+        <text x="24" y="32" font-family="Syne, sans-serif" font-size="16" font-weight="700" fill="var(--text)">Analytics Dashboard</text>
+        <text x="24" y="52" font-family="DM Mono, monospace" font-size="12" fill="var(--muted)">Real-time insights</text>
+
+        <!-- KPI Cards Section -->
+        <!-- KPI 1 -->
+        <rect x="20" y="85" width="90" height="60" rx="8" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+        <text x="28" y="105" font-family="DM Mono, monospace" font-size="10" fill="var(--muted)">Revenue</text>
+        <text x="28" y="128" font-family="Syne, sans-serif" font-size="18" font-weight="700" fill="var(--teal)">$2.4M</text>
+
+        <!-- KPI 2 -->
+        <rect x="120" y="85" width="90" height="60" rx="8" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+        <text x="128" y="105" font-family="DM Mono, monospace" font-size="10" fill="var(--muted)">Growth</text>
+        <text x="128" y="128" font-family="Syne, sans-serif" font-size="18" font-weight="700" fill="var(--lavender)">+34%</text>
+
+        <!-- KPI 3 -->
+        <rect x="220" y="85" width="90" height="60" rx="8" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+        <text x="228" y="105" font-family="DM Mono, monospace" font-size="10" fill="var(--muted)">Margin</text>
+        <text x="228" y="128" font-family="Syne, sans-serif" font-size="18" font-weight="700" fill="var(--teal)">42%</text>
+
+        <!-- KPI 4 -->
+        <rect x="320" y="85" width="80" height="60" rx="8" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+        <text x="328" y="105" font-family="DM Mono, monospace" font-size="10" fill="var(--muted)">Users</text>
+        <text x="328" y="128" font-family="Syne, sans-serif" font-size="18" font-weight="700" fill="var(--lavender)">14K</text>
+
+        <!-- Chart 1: Line Chart -->
+        <text x="24" y="175" font-family="Syne, sans-serif" font-size="13" font-weight="600" fill="var(--text)">Revenue Trend</text>
+        <rect x="20" y="185" width="190" height="140" rx="8" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+        
+        <!-- Line chart path -->
+        <polyline points="35,290 60,265 85,275 110,240 135,250 180,210 195,225" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Gradient fill under line -->
+        <polygon points="35,290 60,265 85,275 110,240 135,250 180,210 195,225 195,310 35,310" fill="url(#chartGrad1)"/>
+        <!-- Dots on line -->
+        <circle cx="35" cy="290" r="3" fill="var(--teal)"/>
+        <circle cx="180" cy="210" r="3" fill="var(--teal)"/>
+        <circle cx="195" cy="225" r="3" fill="var(--lavender)"/>
+        <!-- X-axis -->
+        <line x1="30" y1="305" x2="195" y2="305" stroke="var(--border)" stroke-width="0.5"/>
+
+        <!-- Chart 2: Bar Chart -->
+        <text x="230" y="175" font-family="Syne, sans-serif" font-size="13" font-weight="600" fill="var(--text)">Performance</text>
+        <rect x="220" y="185" width="180" height="140" rx="8" fill="var(--bg)" stroke="var(--border)" stroke-width="1"/>
+        
+        <!-- Bars -->
+        <rect x="235" y="275" width="16" height="25" rx="3" fill="var(--teal)" opacity="0.7"/>
+        <rect x="256" y="260" width="16" height="40" rx="3" fill="var(--teal)" opacity="0.9"/>
+        <rect x="277" y="250" width="16" height="50" rx="3" fill="var(--teal)"/>
+        <rect x="298" y="265" width="16" height="35" rx="3" fill="var(--lavender)" opacity="0.8"/>
+        <rect x="319" y="255" width="16" height="45" rx="3" fill="var(--lavender)"/>
+        <rect x="340" y="270" width="16" height="30" rx="3" fill="var(--teal)" opacity="0.6"/>
+        <rect x="361" y="245" width="16" height="55" rx="3" fill="var(--lavender)"/>
+        <!-- X-axis -->
+        <line x1="230" y1="305" x2="385" y2="305" stroke="var(--border)" stroke-width="0.5"/>
+
+        <!-- Bottom Section: Data Summary -->
+        <text x="24" y="360" font-family="Syne, sans-serif" font-size="13" font-weight="600" fill="var(--text)">Recent Activity</text>
+        <line x1="20" y1="370" x2="400" y2="370" stroke="var(--border)" stroke-width="1"/>
+
+        <!-- Activity Item 1 -->
+        <circle cx="30" cy="395" r="5" fill="var(--teal)" opacity="0.6"/>
+        <text x="45" y="398" font-family="DM Mono, monospace" font-size="11" fill="var(--text)">Sales +12% week-on-week</text>
+        <text x="45" y="412" font-family="DM Mono, monospace" font-size="9" fill="var(--muted)">2 hours ago</text>
+
+        <!-- Activity Item 2 -->
+        <circle cx="30" cy="440" r="5" fill="var(--lavender)" opacity="0.6"/>
+        <text x="45" y="443" font-family="DM Mono, monospace" font-size="11" fill="var(--text)">New customer cohort ready</text>
+        <text x="45" y="457" font-family="DM Mono, monospace" font-size="9" fill="var(--muted)">5 hours ago</text>
+
+        <!-- Activity Item 3 -->
+        <circle cx="30" cy="485" r="5" fill="var(--teal)" opacity="0.4"/>
+        <text x="45" y="488" font-family="DM Mono, monospace" font-size="11" fill="var(--text)">Data sync completed</text>
+        <text x="45" y="502" font-family="DM Mono, monospace" font-size="9" fill="var(--muted)">12 hours ago</text>
       </svg>
     </div>
   </div>
@@ -422,7 +568,7 @@
         <span id="more-about" style="display: none;">
            beyond the spreadsheet. I've built AI pipelines that cut manual work by 40%, analysed over 12 million records to reshape procurement strategy, and presented findings to stakeholders who needed clarity, not complexity.
            <br><br>
-           I thrive at the intersection of <em>technical depth and human communication</em>— whether it’s analysing trends, building automated data workflows, or communicating insights. I aim to bring <em>clarity, structure, and impact</em> to every project.
+           I thrive at the intersection of <em>technical depth and human communication</em>— whether it's analysing trends, building automated data workflows, or communicating insights. I aim to bring <em>clarity, structure, and impact</em> to every project.
         </span>
         <span onclick="toggleInline('about')" id="btn-about" style="color: var(--teal); cursor: pointer; font-weight: 600; margin-left: 5px;">more...</span>
       </p>
@@ -634,7 +780,7 @@
   <div class="contact-inner">
     <div class="sec-label reveal">Contact</div>
     <h2 class="sec-title reveal">Let's build something.</h2>
-    <p class="contact-desc reveal">  Based in the UK and open to full-time Data Analyst opportunities. I’m energized by diverse teams, fresh perspectives, and challenges that don’t have obvious solutions. If you’re looking for someone who turns data into actionable insights and drives real decisions, I’d love to connect!</p>
+    <p class="contact-desc reveal">  Based in the UK and open to full-time Data Analyst opportunities. I'm energized by diverse teams, fresh perspectives, and challenges that don't have obvious solutions. If you're looking for someone who turns data into actionable insights and drives real decisions, I'd love to connect!</p>
     <div class="contact-links reveal">
       <a href="mailto:srkothari10@gmail.com" class="c-link">
         <span class="c-icon">✉</span>
@@ -658,7 +804,6 @@
  
 <footer>
   <span>© 2026 Sakshi Kothari. All rights reserved.</span>
-  <!--<span>Deployed on GitHub Pages</span>-->
 </footer>
  
 <script>
@@ -695,6 +840,99 @@
     updateToggleUI(next);
   });
   
+  /* ── CV DOWNLOAD FUNCTIONALITY (LINE 920-935) ── */
+  const cvDownloadNav = document.getElementById('cvDownloadNav');
+  const cvDownloadHero = document.getElementById('cvDownloadHero');
+
+  function handleCVDownload(e) {
+    e.preventDefault();
+    // Create a simple PDF or document download
+    // For now, we'll create a text-based resume download
+    const cvContent = `
+SAKSHI KOTHARI
+Data Analyst | Finance & Tech
+
+📍 London, UK | 📧 srkothari10@gmail.com
+🔗 linkedin.com/in/skothari10 | github.com/sakshii-10
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROFESSIONAL SUMMARY
+Finance & Tech Analyst Intern with hands-on experience in data analysis and business insights.
+Transforming complex datasets into clear, actionable outcomes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EXPERIENCE
+
+Finance & Tech Analyst Intern | Beko Europe (Feb 2026 – Present)
+• Applying data analytics and financial modelling in cross-functional environment
+• Supporting data-driven decision-making through reporting and visualisation
+
+AI & Data Intern | YCX (Apr – Aug 2025)
+• Built automated AI-agent pipelines reducing manual work by ~40%
+• Designed selective enrichment workflows reducing processing time from hours to minutes
+• Implemented multi-agent orchestration using n8n and Groq API
+
+Math Tutor | Murtaza Sir Tuitions (Jul 2021 – Apr 2023)
+• Delivered personalised tutoring to 70+ students
+• Improved academic performance by 20% and exam pass rates by 30%
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EDUCATION
+
+MSc Big Data Science (Distinction)
+Queen Mary University of London | Sep 2024 – Sep 2025
+
+BSc Computer Science (Distinction, 9.7 CGPA)
+SIES College of Arts, Science & Commerce | 2021 – 2024
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TECHNICAL SKILLS
+
+Programming: Python, Pandas, NumPy, Scikit-learn, SQL (PostgreSQL), PySpark
+BI & Visualisation: Power BI, DAX, Tableau, Excel, Power Query
+ML/AI: ETL Pipelines, LLMs, n8n, Groq API, Streaming Data
+Cloud & Tools: Google Cloud, AWS (Spark), Git, Google Sheets API
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROJECTS
+
+1. E-Commerce Customer Behavior Analysis
+   Analysed 10K+ transactions to uncover retention drivers and churn patterns
+   Skills: Python, SQL, Power BI
+
+2. Profitability & Performance Analysis
+   Analysed 12M+ records, identified 198 high-margin SKUs
+   Skills: SQL, Python, Power BI
+
+3. Real-Time Urban Mobility Insights
+   Large-scale mobility datasets analysis using PySpark
+   Skills: PySpark, Spark Streaming, ETL
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Generated: ${new Date().toLocaleDateString()}
+    `;
+
+    // Create blob and download
+    const blob = new Blob([cvContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Sakshi_Kothari_CV.txt';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  }
+
+  if (cvDownloadNav) cvDownloadNav.addEventListener('click', handleCVDownload);
+  if (cvDownloadHero) cvDownloadHero.addEventListener('click', handleCVDownload);
+  
   function toggleInline(section) {
       const moreText = document.getElementById("more-" + section);
       const btnText = document.getElementById("btn-" + section);
@@ -707,6 +945,7 @@
           btnText.innerHTML = "more...";
       }
   }
+
   // ── Custom cursor (desktop only) ──
   const cursor = document.getElementById('cursor');
   const ring   = document.getElementById('cursorRing');
@@ -748,4 +987,3 @@
 </script>
 </body>
 </html>
- 
