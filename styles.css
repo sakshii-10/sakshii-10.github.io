@@ -134,13 +134,14 @@
     [data-theme="dark"] .chip{background:rgba(167,139,250,0.05);}
     
     /* ── CTA BUTTONS (UPDATED - LINE 180-190) ── */
-    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .85s forwards;align-items:center;}
-    .btn-teal{display:inline-block;padding:.85rem 2rem;background:var(--teal);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
+/* ── CTA BUTTONS (COMPRESSED) ── */
+    .hero-cta{display:flex;gap:0.7rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .85s forwards;align-items:center;}
+    .btn-teal{display:inline-block;padding:.7rem 1.4rem;background:var(--teal);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
     [data-theme="light"] .btn-teal{color:#fff;}
     [data-theme="dark"] .btn-teal{color:#0d0b14;}
     .btn-teal:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(13,148,136,0.3);}
     [data-theme="dark"] .btn-teal:hover{box-shadow:0 10px 40px rgba(45,212,191,0.3);}
-    .btn-ghost{display:inline-block;padding:.85rem 2rem;border:1px solid var(--border);color:var(--lavender);font-family:'Syne',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:border-color .3s,box-shadow .3s;}
+    .btn-ghost{display:inline-block;padding:.7rem 1.4rem;border:1px solid var(--border);color:var(--lavender);font-family:'Syne',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:border-color .3s,box-shadow .3s;}
     .btn-ghost:hover{border-color:var(--lavender);box-shadow:var(--glow-l);}
     /* ── SOCIAL BUTTONS (LinkedIn + GitHub) ── */
 /* ── SOCIAL BUTTONS (LinkedIn + GitHub) - COMPACT ICON ONLY ── */
