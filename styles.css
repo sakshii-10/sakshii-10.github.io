@@ -143,72 +143,67 @@
     .btn-ghost{display:inline-block;padding:.85rem 2rem;border:1px solid var(--border);color:var(--lavender);font-family:'Syne',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:border-color .3s,box-shadow .3s;}
     .btn-ghost:hover{border-color:var(--lavender);box-shadow:var(--glow-l);}
     /* ── SOCIAL BUTTONS (LinkedIn + GitHub) ── */
-.social-buttons {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.btn-social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  width: 50px;
-  height: 50px;
-  border: 1.5px solid var(--border);
-  background: var(--card);
-  border-radius: 0.6rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.btn-social:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(13, 148, 136, 0.25);
-}
-
-.btn-social.btn-linkedin {
-  color: #0a66c2;
-  border-color: rgba(10, 102, 194, 0.3);
-}
-
-.btn-social.btn-linkedin:hover {
-  background: rgba(10, 102, 194, 0.08);
-  border-color: #0a66c2;
-  box-shadow: 0 8px 25px rgba(10, 102, 194, 0.2);
-}
-
-.btn-social.btn-github {
-  color: var(--text);
-  border-color: var(--border);
-}
-
-.btn-social.btn-github:hover {
-  background: var(--bg2);
-  border-color: var(--text);
-  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.2);
-}
-
-[data-theme="dark"] .btn-social.btn-github {
-  color: #ede9fe;
-}
+/* ── SOCIAL BUTTONS (LinkedIn + GitHub) - COMPACT ICON ONLY ── */
+    .social-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      border-radius: 0.4rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .btn-social:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(13, 148, 136, 0.2);
+    }
+    
+    .btn-social.btn-linkedin {
+      color: #0a66c2;
+      border-color: rgba(10, 102, 194, 0.3);
+    }
+    
+    .btn-social.btn-linkedin:hover {
+      background: rgba(10, 102, 194, 0.08);
+      border-color: #0a66c2;
+      box-shadow: 0 6px 18px rgba(10, 102, 194, 0.15);
+    }
+    
+    .btn-social.btn-github {
+      color: var(--text);
+      border-color: var(--border);
+    }
+    
+    .btn-social.btn-github:hover {
+      background: var(--bg2);
+      border-color: var(--text);
+      box-shadow: 0 6px 18px rgba(124, 58, 237, 0.15);
+    }
+    
+    [data-theme="dark"] .btn-social.btn-github {
+      color: #ede9fe;
+    }
 
 .social-icon {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   font-family: 'Syne', sans-serif;
 }
 
 .social-label {
-  font-size: 0.55rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-family: 'DM Mono', monospace;
+  display: none;
 }
 
     .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:fadeUp 1s 1.2s forwards;}
