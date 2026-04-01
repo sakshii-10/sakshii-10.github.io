@@ -1,4 +1,4 @@
-<script>
+
    // ── Always start at top on refresh ──
   if('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.scrollTo(0, 0);
@@ -94,4 +94,4 @@ cvButtons.forEach(btn => {
     entries.forEach((e,i)=>{ if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'), i*70); });
   },{threshold:.08});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
+
