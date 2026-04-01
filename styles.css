@@ -196,15 +196,25 @@
       color: #ede9fe;
     }
 
-.social-icon {
-  font-size: 0.85rem;
-  font-weight: 700;
-  font-family: 'Syne', sans-serif;
-}
+    .social-icon {
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: 'Syne', sans-serif;
+    }
+    
+    .social-label {
+      display: none;
+    }
 
-.social-label {
-  display: none;
-}
+    .github-icon {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+    
+    .btn-github:hover .github-icon {
+      filter: brightness(1.2);
+    }
 
     .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--muted);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:fadeUp 1s 1.2s forwards;}
     .scroll-bar{width:1px;height:50px;background:linear-gradient(to bottom,var(--lavender),transparent);animation:drop 2.5s ease-in-out infinite;}
