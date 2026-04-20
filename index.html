@@ -72,7 +72,7 @@
     </div>
   </div>
 
-  <!-- RIGHT: dashboard visual — now a proper grid column, not a wrapping child -->
+  <!-- RIGHT: dashboard visual -->
   <div class="hero-visual">
     <div class="dashboard-peek">
       <svg viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -274,10 +274,15 @@
   </div>
 </section>
  
+<!-- ══════════════════════════════════════
+     PROJECTS SECTION — with Show More
+══════════════════════════════════════ -->
 <section id="projects">
   <div class="sec-label reveal">Projects</div>
   <h2 class="sec-title reveal">Selected work.</h2>
-  <div class="projects-grid">
+  <div class="projects-grid" id="projectsGrid">
+
+    <!-- ── FEATURED 3 (always visible) ── -->
     <div class="proj-card reveal">
       <div class="proj-vis">
         <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
@@ -304,6 +309,12 @@
           <span class="proj-tag">Python</span><span class="proj-tag">SQL</span>
           <span class="proj-tag">Power BI</span><span class="proj-tag">CTEs</span><span class="proj-tag">LTV</span>
         </div>
+        <div class="proj-links">
+          <a href="https://github.com/sakshii-10/ecommerce-customer-analysis" target="_blank" class="proj-link-btn proj-link-gh">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Code
+          </a>
+        </div>
       </div>
     </div>
  
@@ -328,6 +339,12 @@
         <div class="proj-tags">
           <span class="proj-tag">SQL</span><span class="proj-tag">Python</span>
           <span class="proj-tag">Power BI</span><span class="proj-tag">Gross Margin</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/sakshii-10/profitability-analysis" target="_blank" class="proj-link-btn proj-link-gh">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Code
+          </a>
         </div>
       </div>
     </div>
@@ -357,34 +374,267 @@
           <span class="proj-tag">PySpark</span><span class="proj-tag">Spark Streaming</span>
           <span class="proj-tag">ETL</span><span class="proj-tag">Big Data</span>
         </div>
+        <div class="proj-links">
+          <a href="https://github.com/sakshii-10/urban-mobility-pyspark" target="_blank" class="proj-link-btn proj-link-gh">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Code
+          </a>
+        </div>
       </div>
     </div>
+
+    <!-- ── EXTRA GITHUB PROJECTS (hidden by default) ── -->
+
+    <!-- 04: Audio Classification -->
+    <div class="proj-card proj-extra reveal" style="display:none;">
+      <div class="proj-vis">
+        <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="160" fill="#110f1c"/>
+          <!-- Waveform bars -->
+          <rect x="30"  y="70"  width="8" height="20" rx="4" fill="rgba(45,212,191,0.4)"/>
+          <rect x="44"  y="50"  width="8" height="60" rx="4" fill="rgba(45,212,191,0.7)"/>
+          <rect x="58"  y="60"  width="8" height="40" rx="4" fill="rgba(167,139,250,0.6)"/>
+          <rect x="72"  y="40"  width="8" height="80" rx="4" fill="rgba(45,212,191,0.9)"/>
+          <rect x="86"  y="55"  width="8" height="50" rx="4" fill="rgba(167,139,250,0.5)"/>
+          <rect x="100" y="65"  width="8" height="30" rx="4" fill="rgba(45,212,191,0.6)"/>
+          <rect x="114" y="45"  width="8" height="70" rx="4" fill="rgba(45,212,191,0.8)"/>
+          <rect x="128" y="60"  width="8" height="40" rx="4" fill="rgba(167,139,250,0.7)"/>
+          <rect x="142" y="75"  width="8" height="10" rx="4" fill="rgba(45,212,191,0.3)"/>
+          <rect x="156" y="50"  width="8" height="60" rx="4" fill="rgba(167,139,250,0.9)"/>
+          <rect x="170" y="65"  width="8" height="30" rx="4" fill="rgba(45,212,191,0.5)"/>
+          <rect x="184" y="35"  width="8" height="90" rx="4" fill="rgba(45,212,191,1)"/>
+          <rect x="198" y="55"  width="8" height="50" rx="4" fill="rgba(167,139,250,0.6)"/>
+          <rect x="212" y="68"  width="8" height="24" rx="4" fill="rgba(45,212,191,0.4)"/>
+          <rect x="226" y="48"  width="8" height="64" rx="4" fill="rgba(167,139,250,0.8)"/>
+          <rect x="240" y="62"  width="8" height="36" rx="4" fill="rgba(45,212,191,0.6)"/>
+          <rect x="254" y="42"  width="8" height="76" rx="4" fill="rgba(45,212,191,0.9)"/>
+          <rect x="268" y="58"  width="8" height="44" rx="4" fill="rgba(167,139,250,0.5)"/>
+          <rect x="282" y="72"  width="8" height="16" rx="4" fill="rgba(45,212,191,0.35)"/>
+          <rect x="296" y="52"  width="8" height="56" rx="4" fill="rgba(167,139,250,0.7)"/>
+          <rect x="310" y="66"  width="8" height="28" rx="4" fill="rgba(45,212,191,0.55)"/>
+          <rect x="324" y="44"  width="8" height="72" rx="4" fill="rgba(45,212,191,0.85)"/>
+          <rect x="338" y="60"  width="8" height="40" rx="4" fill="rgba(167,139,250,0.6)"/>
+          <rect x="352" y="74"  width="8" height="12" rx="4" fill="rgba(45,212,191,0.3)"/>
+          <!-- truth vs deception label -->
+          <text x="200" y="148" text-anchor="middle" fill="rgba(45,212,191,0.3)" font-size="7" font-family="DM Mono" letter-spacing="2">TRUTHFUL vs DECEPTIVE · MFCC FEATURES</text>
+        </svg>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">04 / ML · NLP · AUDIO</div>
+        <div class="proj-title">Voice to Verdict: Audio Deception Detection</div>
+        <p class="proj-desc">Deception detection from speech using ML. Extracted MFCC acoustic features from 30-second audio chunks, engineered semantic features, and benchmarked classifiers (SVM, RF, Logistic Regression) to distinguish truthful vs deceptive statements — submitted for QMUL ECS7020P.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span><span class="proj-tag">Scikit-learn</span>
+          <span class="proj-tag">librosa</span><span class="proj-tag">MFCC</span><span class="proj-tag">NLP</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/sakshii-10/Audio-Classification-using-Machine-Learning" target="_blank" class="proj-link-btn proj-link-gh">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05: CIFAR-10 Image Classification -->
+    <div class="proj-card proj-extra reveal" style="display:none;">
+      <div class="proj-vis">
+        <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="160" fill="#110f1c"/>
+          <!-- Grid of tiny image tiles -->
+          <rect x="20"  y="20" width="32" height="32" rx="3" fill="rgba(45,212,191,0.2)"  stroke="rgba(45,212,191,0.4)"  stroke-width="1"/>
+          <rect x="58"  y="20" width="32" height="32" rx="3" fill="rgba(167,139,250,0.2)" stroke="rgba(167,139,250,0.4)" stroke-width="1"/>
+          <rect x="96"  y="20" width="32" height="32" rx="3" fill="rgba(45,212,191,0.15)" stroke="rgba(45,212,191,0.3)"  stroke-width="1"/>
+          <rect x="134" y="20" width="32" height="32" rx="3" fill="rgba(167,139,250,0.25)"stroke="rgba(167,139,250,0.5)" stroke-width="1"/>
+          <rect x="172" y="20" width="32" height="32" rx="3" fill="rgba(45,212,191,0.3)"  stroke="rgba(45,212,191,0.5)"  stroke-width="1"/>
+          <rect x="210" y="20" width="32" height="32" rx="3" fill="rgba(167,139,250,0.15)"stroke="rgba(167,139,250,0.35)"stroke-width="1"/>
+          <rect x="248" y="20" width="32" height="32" rx="3" fill="rgba(45,212,191,0.25)" stroke="rgba(45,212,191,0.45)" stroke-width="1"/>
+          <rect x="286" y="20" width="32" height="32" rx="3" fill="rgba(167,139,250,0.2)" stroke="rgba(167,139,250,0.4)" stroke-width="1"/>
+          <rect x="324" y="20" width="32" height="32" rx="3" fill="rgba(45,212,191,0.18)" stroke="rgba(45,212,191,0.35)" stroke-width="1"/>
+          <rect x="362" y="20" width="18" height="32" rx="3" fill="rgba(167,139,250,0.12)"stroke="rgba(167,139,250,0.25)"stroke-width="1"/>
+          <!-- Labels -->
+          <text x="36"  y="67" text-anchor="middle" fill="rgba(45,212,191,0.5)"  font-size="7" font-family="DM Mono">plane</text>
+          <text x="74"  y="67" text-anchor="middle" fill="rgba(167,139,250,0.5)" font-size="7" font-family="DM Mono">car</text>
+          <text x="112" y="67" text-anchor="middle" fill="rgba(45,212,191,0.5)"  font-size="7" font-family="DM Mono">bird</text>
+          <text x="150" y="67" text-anchor="middle" fill="rgba(167,139,250,0.5)" font-size="7" font-family="DM Mono">cat</text>
+          <text x="188" y="67" text-anchor="middle" fill="rgba(45,212,191,0.5)"  font-size="7" font-family="DM Mono">deer</text>
+          <text x="226" y="67" text-anchor="middle" fill="rgba(167,139,250,0.5)" font-size="7" font-family="DM Mono">dog</text>
+          <text x="264" y="67" text-anchor="middle" fill="rgba(45,212,191,0.5)"  font-size="7" font-family="DM Mono">frog</text>
+          <text x="302" y="67" text-anchor="middle" fill="rgba(167,139,250,0.5)" font-size="7" font-family="DM Mono">horse</text>
+          <text x="340" y="67" text-anchor="middle" fill="rgba(45,212,191,0.5)"  font-size="7" font-family="DM Mono">ship</text>
+          <!-- Accuracy bar -->
+          <rect x="20" y="90" width="360" height="8" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <rect x="20" y="90" width="306" height="8" rx="4" fill="url(#accGrad)"/>
+          <defs><linearGradient id="accGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#2dd4bf"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+          <text x="336" y="98" fill="rgba(45,212,191,0.8)" font-size="9" font-family="Syne, sans-serif" font-weight="700">85%</text>
+          <text x="20"  y="115" fill="rgba(255,255,255,0.25)" font-size="8" font-family="DM Mono">Accuracy</text>
+          <text x="200" y="148" text-anchor="middle" fill="rgba(167,139,250,0.3)" font-size="7" font-family="DM Mono" letter-spacing="2">CNN · DEEP LEARNING · 60K IMAGES · 10 CLASSES</text>
+        </svg>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">05 / DEEP LEARNING · CV</div>
+        <div class="proj-title">CIFAR-10 Image Classification</div>
+        <p class="proj-desc">Built a CNN-based image classifier on the CIFAR-10 dataset (60K 32×32 images across 10 classes). Implemented batch normalisation, data augmentation, and dropout to push accuracy. Explored architecture trade-offs between model depth and generalisation.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span><span class="proj-tag">TensorFlow</span>
+          <span class="proj-tag">CNN</span><span class="proj-tag">Deep Learning</span><span class="proj-tag">Computer Vision</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/sakshii-10/CIFAR10-_Image-Classification" target="_blank" class="proj-link-btn proj-link-gh">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06: Financial Complaints Power BI -->
+    <div class="proj-card proj-extra reveal" style="display:none;">
+      <div class="proj-vis">
+        <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="160" fill="#110f1c"/>
+          <!-- Stacked bar chart - complaints by category -->
+          <rect x="30"  y="60"  width="28" height="80" rx="2" fill="rgba(45,212,191,0.7)"/>
+          <rect x="30"  y="40"  width="28" height="20" rx="2" fill="rgba(167,139,250,0.5)"/>
+          <rect x="74"  y="50"  width="28" height="90" rx="2" fill="rgba(45,212,191,0.5)"/>
+          <rect x="74"  y="30"  width="28" height="20" rx="2" fill="rgba(167,139,250,0.7)"/>
+          <rect x="118" y="70"  width="28" height="70" rx="2" fill="rgba(45,212,191,0.6)"/>
+          <rect x="118" y="55"  width="28" height="15" rx="2" fill="rgba(167,139,250,0.4)"/>
+          <rect x="162" y="45"  width="28" height="95" rx="2" fill="rgba(45,212,191,0.9)"/>
+          <rect x="162" y="25"  width="28" height="20" rx="2" fill="rgba(167,139,250,0.6)"/>
+          <rect x="206" y="65"  width="28" height="75" rx="2" fill="rgba(45,212,191,0.5)"/>
+          <rect x="206" y="50"  width="28" height="15" rx="2" fill="rgba(167,139,250,0.35)"/>
+          <!-- KPI boxes right side -->
+          <rect x="258" y="20" width="120" height="32" rx="4" fill="rgba(45,212,191,0.07)" stroke="rgba(45,212,191,0.25)" stroke-width="1"/>
+          <text x="266" y="34"  fill="rgba(45,212,191,0.6)" font-size="8" font-family="DM Mono">Resolved</text>
+          <text x="266" y="46"  fill="#2dd4bf" font-size="11" font-family="Syne, sans-serif" font-weight="700">78.4%</text>
+          <rect x="258" y="62" width="120" height="32" rx="4" fill="rgba(167,139,250,0.07)" stroke="rgba(167,139,250,0.25)" stroke-width="1"/>
+          <text x="266" y="76"  fill="rgba(167,139,250,0.6)" font-size="8" font-family="DM Mono">Avg Response</text>
+          <text x="266" y="88"  fill="#a78bfa" font-size="11" font-family="Syne, sans-serif" font-weight="700">4.2 days</text>
+          <rect x="258" y="104" width="120" height="32" rx="4" fill="rgba(45,212,191,0.07)" stroke="rgba(45,212,191,0.2)" stroke-width="1"/>
+          <text x="266" y="118" fill="rgba(45,212,191,0.6)" font-size="8" font-family="DM Mono">Total Cases</text>
+          <text x="266" y="130" fill="#2dd4bf" font-size="11" font-family="Syne, sans-serif" font-weight="700">75,513</text>
+          <line x1="20" y1="140" x2="245" y2="140" stroke="rgba(45,212,191,0.15)" stroke-width="1"/>
+          <text x="20"  y="154" fill="rgba(167,139,250,0.3)" font-size="7" font-family="DM Mono" letter-spacing="2">POWER BI · DAX · FINANCIAL SERVICES DATA</text>
+        </svg>
+      </div>
+      <div class="proj-body">
+        <div class="proj-num">06 / POWER BI · BI DASHBOARD</div>
+        <div class="proj-title">Financial Complaints BI Dashboard</div>
+        <p class="proj-desc">Interactive Power BI dashboard analysing 75K+ financial service complaints. Built DAX measures to track resolution rates, response times, and complaint trends by product, region, and company — surfacing actionable patterns for compliance and service improvement.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Power BI</span><span class="proj-tag">DAX</span>
+          <span class="proj-tag">Power Query</span><span class="proj-tag">Data Modelling</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/sakshii-10/financial-complaints-powerbi-dashboard" target="_blank" class="proj-link-btn proj-link-gh">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+  </div><!-- /.projects-grid -->
+
+  <!-- Show More / Less toggle -->
+  <div class="projects-more-wrap reveal">
+    <button class="btn-projects-more" id="btnShowMore" onclick="toggleMoreProjects()">
+      <span id="showMoreLabel">View More Projects</span>
+      <svg id="showMoreArrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </button>
+    <a href="https://github.com/sakshii-10?tab=repositories" target="_blank" class="btn-gh-all">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      All Repos on GitHub
+    </a>
   </div>
+
 </section>
  
+<!-- ══════════════════════════════════════
+     CONTACT SECTION — Interactive Redesign
+══════════════════════════════════════ -->
 <section id="contact">
   <div class="contact-inner">
     <div class="sec-label reveal">Contact</div>
     <h2 class="sec-title reveal">Let's build something.</h2>
-    <p class="contact-desc reveal">Based in the UK and open to full-time Data Analyst opportunities. I'm energized by diverse teams, fresh perspectives, and challenges that don't have obvious solutions. If you're looking for someone who turns data into actionable insights and drives real decisions, I'd love to connect!</p>
-    <div class="contact-links reveal">
-      <a href="mailto:sakshi.kothari@email.com" class="c-link">
-        <span class="c-icon">✉</span>
-        <div><span class="c-label">Email</span><span class="c-val">sakshi.kothari@email.com</span></div>
-        <span class="c-arrow">→</span>
+
+    <!-- Animated tagline -->
+    <p class="contact-desc reveal">Based in the UK, open to full-time Data Analyst roles. I turn messy data into decisions that matter.</p>
+
+    <!-- ── Availability badge ── -->
+    <div class="contact-availability reveal">
+      <span class="avail-dot"></span>
+      <span class="avail-text">Available for opportunities · London, UK</span>
+      <span class="avail-badge">Open to Work</span>
+    </div>
+
+    <!-- ── Main contact channels ── -->
+    <div class="contact-channels reveal">
+
+      <!-- Email card -->
+      <a href="mailto:sakshi.kothari@email.com" class="contact-channel" data-channel="email">
+        <div class="cc-icon-wrap">
+          <span class="cc-icon">✉</span>
+          <div class="cc-ripple"></div>
+        </div>
+        <div class="cc-content">
+          <span class="cc-platform">Email</span>
+          <span class="cc-handle">sakshi.kothari@email.com</span>
+          <span class="cc-action">Send a message →</span>
+        </div>
+        <div class="cc-hover-bar"></div>
       </a>
-      <a href="https://www.linkedin.com/in/skothari10" target="_blank" class="c-link">
-        <span class="c-icon">in</span>
-        <div><span class="c-label">LinkedIn</span><span class="c-val">linkedin.com/in/skothari10</span></div>
-        <span class="c-arrow">→</span>
+
+      <!-- LinkedIn card -->
+      <a href="https://www.linkedin.com/in/skothari10" target="_blank" class="contact-channel" data-channel="linkedin">
+        <div class="cc-icon-wrap">
+          <span class="cc-icon cc-icon-text">in</span>
+          <div class="cc-ripple"></div>
+        </div>
+        <div class="cc-content">
+          <span class="cc-platform">LinkedIn</span>
+          <span class="cc-handle">/in/skothari10</span>
+          <span class="cc-action">Connect with me →</span>
+        </div>
+        <div class="cc-hover-bar"></div>
       </a>
-      <a href="https://github.com/sakshii-10" target="_blank" class="c-link">
-        <span class="c-icon">⌥</span>
-        <div><span class="c-label">GitHub</span><span class="c-val">github.com/sakshii-10</span></div>
-        <span class="c-arrow">→</span>
+
+      <!-- GitHub card -->
+      <a href="https://github.com/sakshii-10" target="_blank" class="contact-channel" data-channel="github">
+        <div class="cc-icon-wrap">
+          <span class="cc-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </span>
+          <div class="cc-ripple"></div>
+        </div>
+        <div class="cc-content">
+          <span class="cc-platform">GitHub</span>
+          <span class="cc-handle">sakshii-10</span>
+          <span class="cc-action">View my work →</span>
+        </div>
+        <div class="cc-hover-bar"></div>
+      </a>
+
+    </div><!-- /.contact-channels -->
+
+    <!-- ── Big CTA ── -->
+    <div class="contact-cta-final reveal">
+      <a href="mailto:sakshi.kothari@email.com" class="btn-say-hello">
+        <span class="btn-say-hello-text">Say Hello</span>
+        <span class="btn-say-hello-sub">sakshi.kothari@email.com</span>
+        <span class="btn-say-hello-arrow">↗</span>
+      </a>
+      <a href="https://drive.google.com/uc?export=download&id=1qvQjX3ecPsdsfoRuRvWaIOM1iMP14Xys" download class="btn-dl-cv-contact">
+        <span>⬇</span> Download CV
       </a>
     </div>
-    <a href="mailto:sakshi.kothari@email.com" class="btn-teal reveal">Say Hello →</a>
+
   </div>
 </section>
 
