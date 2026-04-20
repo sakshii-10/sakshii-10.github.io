@@ -141,3 +141,37 @@
     });
   }
   window.addEventListener('scroll', highlightNav, { passive: true });
+
+  // ── Show More / Less Projects ──
+  function toggleMoreProjects() {
+    const extras   = document.querySelectorAll('.proj-extra');
+    const btn      = document.getElementById('btnShowMore');
+    const label    = document.getElementById('showMoreLabel');
+    const expanded = btn.classList.contains('expanded');
+
+    if (!expanded) {
+      // Show extra cards
+      extras.forEach((card, i) => {
+        card.style.display = '';
+        card.style.animationDelay = (i * 80) + 'ms';
+        card.classList.add('showing');
+        // Re-trigger reveal
+        setTimeout(() => card.classList.add('visible'), i * 80 + 50);
+      });
+      btn.classList.add('expanded');
+      label.textContent = 'Show Less';
+    } else {
+      // Hide extra cards
+      extras.forEach(card => {
+        card.style.display = 'none';
+        card.classList.remove('showing', 'visible');
+      });
+      btn.classList.remove('expanded');
+      label.textContent = 'View More Projects';
+      // Scroll back to projects section top
+      document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // Expose globally for onclick
+  window.toggleMoreProjects = toggleMoreProjects;
