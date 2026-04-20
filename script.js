@@ -175,3 +175,19 @@
 
   // Expose globally for onclick
   window.toggleMoreProjects = toggleMoreProjects;
+
+// ══════════════════════════════════════════════════════════════
+// ── OPTION B: Make project cards clickable ──
+// ══════════════════════════════════════════════════════════════
+document.querySelectorAll('.proj-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    // Don't trigger if clicking the github link directly
+    if (e.target.closest('.proj-link-gh')) return;
+    
+    const githubLink = this.querySelector('.proj-link-gh');
+    if (githubLink) {
+      window.open(githubLink.href, '_blank');
+    }
+  });
+  card.style.cursor = 'pointer';
+});
