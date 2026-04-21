@@ -75,7 +75,7 @@
     [data-theme="dark"] body::after{background-image:linear-gradient(rgba(167,139,250,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(45,212,191,0.02) 1px,transparent 1px);}
  
     /* ── NAV ── */
-    nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 4rem;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--shadow);transition:background .4s,box-shadow .4s;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.4rem max(2rem, 5vw);background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--shadow);transition:background .4s,box-shadow .4s;}
     .nav-right{display:flex;align-items:center;gap:1rem;}
     .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;background:linear-gradient(135deg,var(--teal),var(--lavender));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;letter-spacing:.05em;transition:opacity .3s;}
     .nav-logo:hover{opacity:0.8;}
