@@ -177,17 +177,17 @@
   window.toggleMoreProjects = toggleMoreProjects;
 
 // ══════════════════════════════════════════════════════════════
-// ── OPTION B: Make project cards clickable ──
+// ── Make project cards clickable using data-github-url attribute ──
 // ══════════════════════════════════════════════════════════════
 document.querySelectorAll('.proj-card').forEach(card => {
-  card.addEventListener('click', function(e) {
-    // Don't trigger if clicking the github link directly
-    if (e.target.closest('.proj-link-gh')) return;
-    
-    const githubLink = this.querySelector('.proj-link-gh');
-    if (githubLink) {
-      window.open(githubLink.href, '_blank');
-    }
-  });
-  card.style.cursor = 'pointer';
+  const githubUrl = card.getAttribute('data-github-url');
+  if (githubUrl) {
+    card.addEventListener('click', function(e) {
+      // Allow text selection without triggering navigation
+      if (window.getSelection().toString().length > 0) return;
+      
+      window.open(githubUrl, '_blank');
+    });
+    card.style.cursor = 'pointer';
+  }
 });
